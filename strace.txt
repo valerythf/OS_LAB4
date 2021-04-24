@@ -1,0 +1,60 @@
+execve("./a.out", ["./a.out"], 0x7ffd727afb70 /* 58 vars */) = 0
+brk(NULL)                               = 0x5558f446d000
+arch_prctl(0x3001 /* ARCH_??? */, 0x7ffcd51c6220) = -1 EINVAL (Invalid argument)
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+fstat(3, {st_mode=S_IFREG|0644, st_size=69056, ...}) = 0
+mmap(NULL, 69056, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7fd53e072000
+close(3)                                = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\360q\2\0\0\0\0\0"..., 832) = 832
+pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+pread64(3, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32, 848) = 32
+pread64(3, "\4\0\0\0\24\0\0\0\3\0\0\0GNU\0\t\233\222%\274\260\320\31\331\326\10\204\276X>\263"..., 68, 880) = 68
+fstat(3, {st_mode=S_IFREG|0755, st_size=2029224, ...}) = 0
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fd53e070000
+pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+pread64(3, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32, 848) = 32
+pread64(3, "\4\0\0\0\24\0\0\0\3\0\0\0GNU\0\t\233\222%\274\260\320\31\331\326\10\204\276X>\263"..., 68, 880) = 68
+mmap(NULL, 2036952, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fd53de7e000
+mprotect(0x7fd53dea3000, 1847296, PROT_NONE) = 0
+mmap(0x7fd53dea3000, 1540096, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x25000) = 0x7fd53dea3000
+mmap(0x7fd53e01b000, 303104, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x19d000) = 0x7fd53e01b000
+mmap(0x7fd53e066000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1e7000) = 0x7fd53e066000
+mmap(0x7fd53e06c000, 13528, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fd53e06c000
+close(3)                                = 0
+arch_prctl(ARCH_SET_FS, 0x7fd53e071540) = 0
+mprotect(0x7fd53e066000, 12288, PROT_READ) = 0
+mprotect(0x5558f24d9000, 4096, PROT_READ) = 0
+mprotect(0x7fd53e0b0000, 4096, PROT_READ) = 0
+munmap(0x7fd53e072000, 69056)           = 0
+stat(".", {st_mode=S_IFDIR|0775, st_size=4096, ...}) = 0
+fstat(1, {st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0), ...}) = 0
+brk(NULL)                               = 0x5558f446d000
+brk(0x5558f448e000)                     = 0x5558f448e000
+write(1, "\320\222\320\262\320\265\320\264\320\270\321\202\320\265 \321\201\321\202\320\276\321\200\320\276\320\272\321\203(\320\274"..., 69Введите стороку(максимум 100 символов)
+) = 69
+fstat(0, {st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0), ...}) = 0
+read(0, abc
+"abc\n", 1024)                  = 4
+clone(child_stack=NULL, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0x7fd53e071810) = 4102
+clone(child_stack=NULL, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0x7fd53e071810) = 4104
+write(1, "It's a parent, child1 id: [4102]"..., 52) = ? ERESTARTSYS (To be restarted if SA_RESTART is set)
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=4104, si_uid=1000, si_status=1, si_utime=0, si_stime=0} ---
+write(1, "It's a parent, child1 id: [4102]"..., 52It's a parent, child1 id: [4102], child2 id: [4104]
+) = 52
+shmget(0x53060031, 100, IPC_CREAT|IPC_EXCL|0660) = 42
+shmat(42, NULL, 0)                      = 0x7fd53e0af000
+wait4(-1, Shared memory segment exists - opening as a client
+Creating new shared memory segment
+NULL, 0, NULL)                = 4104
+clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=1, tv_nsec=0}, {tv_sec=1, tv_nsec=24219}) = ? ERESTART_RESTARTBLOCK (Interrupted by signal)
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=4102, si_uid=1000, si_status=0, si_utime=0, si_stime=0} ---
+restart_syscall(<... resuming interrupted clock_nanosleep ...>) = 0
+write(1, " result \n", 9 result 
+)               = 9
+shmdt(0x7fd53e0af000)                   = 0
+shmctl(42, IPC_RMID, NULL)              = 0
+write(1, "cba ", 4cba )                     = 4
+exit_group(0)                           = ?
++++ exited with 0 +++
